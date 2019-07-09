@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import BtnSignOut from '../SignOut/signOut';
 import '../Styles/navbar.css';
 
 class Navbar extends Component{
@@ -15,6 +16,7 @@ return (
 		  	</button>
 		  	<div className="collapse navbar-collapse" id="navbarNav">
 		  	<Link to='/' className="brand-logo">Paws</Link>
+		  	<BtnSignOut />
 		  	</div>
 		</nav>
 	)
