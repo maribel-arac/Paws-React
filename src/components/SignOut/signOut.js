@@ -18,7 +18,7 @@ signOut(){
 }
 
 render() {
-	console.log("holaaaa")
+	
 	return (
 	
 			    <button onClick={this.signOut}>Cerrar sesión</button>

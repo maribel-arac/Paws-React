@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/navbar';
 import Welcome from './components/Welcome/welcome';
 import Wall from './components/Wall/wall';
 import SignIn from './components/SignIn/signIn';
+import Register from './components/Register/register';
 
 
 
@@ -47,6 +48,8 @@ observerListener(){
       <Navbar />
         <Route exact path='/' render={() => <Welcome />} />
         <Route path='/signin' render={ () => this.state.user ? <Wall/> : <SignIn />} />
+        <Route path='/register' render={ () => this.state.user ? <Wall/> : <Register />} />
+
       </div>
     </BrowserRouter>
   );
