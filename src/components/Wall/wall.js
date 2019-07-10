@@ -12,7 +12,7 @@ class Wall extends Component {
 			<div className="container">
 			  <div className="row">
 			    <div className="col-8">
-			    	<p>Holiiiiiiii en el wall</p>
+			    	<p>Holiiiiiiii en el wall OMG</p>
 			    </div>
 			    <div className="col-4">
 			    	

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
 import '../Styles/signIn.css';
+import '../Styles/btnRegister.css';
 
 class SignIn extends Component {
 	constructor(){
@@ -37,19 +38,19 @@ class SignIn extends Component {
 	render() {
 		return(
 
-			<div className="container">
+			<div className="container col-lg-6">
 				<form onSubmit={this.signIn} className="colors">
 				  <div className="form-group">
-				  	<h5>Iniciar Sesión</h5>
+				  	<h1 className="text-center">Inicia Sesión</h1>
 				    <label htmlFor="exampleInputEmail1">Correo electrónico</label>
-				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese un email" />
+				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa email" />
 				  </div>
 				  <div className="form-group">
 				    <label htmlFor="exampleInputPassword1">Contraseña</label>
-				    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingrese contraseña" />
+				    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
 				  </div>
-				  <button type="submit" className="btn btn-color">Iniciar Sesión</button>
-				  <Link to='/register' className="brand-logo">Register</Link>
+				  <button type="submit" className="btn btn-color">Ingresar</button>
+				  <Link to='/register' className="brand-logo btn btnRegister">Crear Cuenta</Link>
 
 				</form>
 			</div>
