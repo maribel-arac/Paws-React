@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import '../Styles/navbar.css';
-// import '../Styles/signedin.css';
+import '../Styles/signOut.css';
 
 class SignOut extends Component{
 	constructor(){
@@ -21,7 +21,7 @@ render() {
 	
 	return (
 	
-			    <button onClick={this.signOut}>Cerrar sesión</button>
+			    <button className="btnSignOut" onClick={this.signOut}>Cerrar sesión</button>
 
 	)
 }
