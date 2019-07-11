@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
 
-.btn-color{
+.color{
 	background-color: #D6B534;
-	color: #fff;
 }
 
 h1 {
 	font-family: 'Londrina Solid', cursive;
 	color: #892F85;
+}
+
+.btnRegister{
+	background-color: #00E1C6;
 }
