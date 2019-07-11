@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CreatePost from '../Posts/createPost';
 
 
 
@@ -13,6 +14,7 @@ class Wall extends Component {
 			  <div className="row">
 			    <div className="col-8">
 			    	<p>Holiiiiiiii en el wall OMG</p>
+			    	<CreatePost />
 			    </div>
 			    <div className="col-4">
 			    	

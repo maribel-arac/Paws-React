@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
+import Swal from "sweetalert2";
 import '../Styles/signIn.css';
-import '../Styles/btnRegister.css';
 
 class SignIn extends Component {
 	constructor(){
@@ -23,6 +23,12 @@ class SignIn extends Component {
 		firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
 		.catch(function(error) {
 		console.log(error);
+		Swal.fire({
+		  type: 'error',
+		  title: 'Vuelve a intentarlo',
+		  showConfirmButton: false,
+		  timer: 1500
+		})
 		});
 	}
 
@@ -49,7 +55,7 @@ class SignIn extends Component {
 				    <label htmlFor="exampleInputPassword1">Contraseña</label>
 				    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
 				  </div>
-				  <button type="submit" className="btn btn-color">Ingresar</button>
+				  <button type="submit" className="btn color" >Ingresar</button>
 				  <Link to='/register' className="brand-logo btn btnRegister">Crear Cuenta</Link>
 
 				</form>

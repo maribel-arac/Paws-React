@@ -6,7 +6,7 @@ const config = {
     authDomain: "social-network-react-c98ba.firebaseapp.com",
     databaseURL: "https://social-network-react-c98ba.firebaseio.com",
     projectId: "social-network-react-c98ba",
-    storageBucket: "",
+    storageBucket: "social-network-react-c98ba.appspot.com",
     messagingSenderId: "833472413436",
     appId: "1:833472413436:web:d0bc1c6f744ada01"
   };
