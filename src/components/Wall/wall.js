@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CreatePost from '../Posts/createPost';
 import firebase from '../Firebase/firebaseConfig';
+import DisplayPost from '../Posts/displayPost';
 
 
 
@@ -37,6 +38,7 @@ class Wall extends Component {
 			    <div className="col-8">
 			    	<p>Holiiiiiiii en el wall OMG</p>
 			    	<CreatePost userInfo = { userInfo} />
+			    	<DisplayPost />
 			    </div>
 			    <div className="col-4">
 			    	
