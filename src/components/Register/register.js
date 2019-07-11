@@ -35,8 +35,7 @@ class Register extends Component {
 		.then(function(){
 			const user = firebase.auth().currentUser;
 			user.updateProfile({
-				name: name,
-				lastName: lastName
+				displayName:  name + lastName
 			})
 		})
 		.catch(function(error) {
