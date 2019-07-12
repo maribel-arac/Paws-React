@@ -18,6 +18,7 @@ class App extends React.Component {
 
     this.state= {
       user:{},
+      userDB : {}
     }
   this.observerListener = this.observerListener.bind(this);
   }
@@ -25,19 +26,32 @@ componentDidMount(){
   this.observerListener();
 }
 
-observerListener(){
-  firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is signed in.
-   this.setState({user});
-    // ...
-  } else {
-    // User is signed out.
-    this.setState({user: null});
+  observerListener(){
+    firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      this.setState( {user} );
+      if(user.displayName === null) {
+        this.setState({
+          userDB:{
+            email: user.email,
+            name: user.displayName
+          }
+        })
+      } else {
+        this.setState({
+          userDB: {
+            name: user.displayName,
+            email: user.email
+          }
+        })
+      }
+    } else {
+      // User is signed out.
+      this.setState({user: null});
+    }
+  })
+    console.log(this.state.userDB)
   }
-});
-}
-
 
 
   render(){
@@ -47,7 +61,7 @@ observerListener(){
       <div className="App">
       <Navbar />
         <Route exact path='/' render={() => <Welcome />} />
-        <Route path='/signin' render={ () => this.state.user ? <Wall/> : <SignIn />} />
+        <Route path='/signin' render={ () => this.state.user ? <Wall user={ this.state.user}/> : <SignIn />} />
         <Route path='/register' render={ () => this.state.user ? <Wall/> : <Register />} />
 
       </div>

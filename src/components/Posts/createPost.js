@@ -80,6 +80,7 @@ class CreatePost extends Component {
 			<div className="container col-lg-8">
 				<form onSubmit={this.sendFormFirebase} className="colors">
 				  <div className="form-group">
+				  	<button className="btn btn-warning">Mascota extraviada</button>
 				  	<h3>Formulario</h3>
 				    <label htmlFor="exampleInputEmail1">Nombre</label>
 				    <input type="text" onChange={this.handleChange} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Nombre de la mascota" />
