@@ -20,8 +20,7 @@ signOut(){
 render() {
 	
 	return (
-	
-			    <button className="btnSignOut" onClick={this.signOut}>Cerrar sesión</button>
+				<button className="btnSignOut" onClick={this.signOut}>Cerrar sesión</button>
 
 	)
 }

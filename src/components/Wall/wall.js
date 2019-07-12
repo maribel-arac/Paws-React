@@ -36,9 +36,9 @@ class Wall extends Component {
 			<div className="container">
 			  <div className="row">
 			    <div className="col-8">
-			    	<p>Holiiiiiiii en el wall OMG</p>
-			    	<CreatePost userInfo = { userInfo} />
-			    	<DisplayPost />
+			    	<p>Este es el muro...YAAAAAAS </p>
+			    	<CreatePost userInfo = { userInfo } />
+			    	<DisplayPost infoUser = { userInfo } />
 			    </div>
 			    <div className="col-4">
 			    	
