@@ -77,7 +77,7 @@ class CreatePost extends Component {
 	render() {
 		return(
 
-			<div className="container col-lg-8" >
+			<div className="container col-lg-8 " >
 
 			<button type="button" className="btn btn-warning text-white" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Llenar formulario</button>
 			
@@ -94,27 +94,27 @@ class CreatePost extends Component {
 				        <form  className="colors">
 				          <div  className="form-group">
 				            <label  for="message-text" className="col-form-label">Nombre:</label>
-				            <textarea   className="form-control"  onChange={this.handleChange} id="name" placeholder="Nombre de la mascota"></textarea>
+				            <textarea   className="form-control"  onChange={this.handleChange} id="name" placeholder="Nombre de la mascota" required></textarea>
 				          </div>
 				          <div  className="form-group">
 				            <label for="message-text" className="col-form-label">Lugar y fecha:</label>
-				            <textarea    className="form-control"  onChange={this.handleChange} id="date" placeholder="Lugar y fecha de cuando fue vista por última vez"></textarea>
+				            <textarea    className="form-control"  onChange={this.handleChange} id="date" placeholder="Lugar y fecha de cuando fue vista por última vez" required></textarea>
 				          </div>
 				           <div  className="form-group">
 				            <label  for="message-text" className="col-form-label">Descripción:</label>
-				            <textarea   className="form-control"  onChange={this.handleChange} id="description" placeholder="Talla, raza, color"></textarea>
+				            <textarea   className="form-control"  onChange={this.handleChange} id="description" placeholder="Talla, raza, color" required></textarea>
 				          </div>
 				          <div  className="form-group">
 				            <label for="message-text" className="col-form-label">Detalles:</label>
-				            <textarea  className="form-control"  onChange={this.handleChange} id="details" placeholder="Menciona si traía placa, collar y/o ropa"></textarea>
+				            <textarea  className="form-control"  onChange={this.handleChange} id="details" placeholder="Menciona si traía placa, collar y/o ropa"required></textarea>
 				          </div>
 				          <div  className="form-group">
 				            <label for="message-text" className="col-form-label">Señas particulares:</label>
-				            <textarea className="form-control"  onChange={this.handleChange} id="signs" placeholder="¿Qué señas particulares tiene tu mascota?"></textarea>
+				            <textarea className="form-control"  onChange={this.handleChange} id="signs" placeholder="¿Qué señas particulares tiene tu mascota?"required></textarea>
 				          </div>
 				          <div  className="form-group">
 				            <label for="message-text" className="col-form-label">Contacto:</label>
-				            <textarea  className="form-control"  onChange={this.handleChange} id="contact" placeholder="Nombre y telefono con quien ponerse en contacto"></textarea>
+				            <textarea  className="form-control"  onChange={this.handleChange} id="contact" placeholder="Nombre y telefono con quien ponerse en contacto" required></textarea>
 				          </div>
 				         
 				        </form>

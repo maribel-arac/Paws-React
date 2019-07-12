@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CreatePost from '../Posts/createPost';
 import firebase from '../Firebase/firebaseConfig';
 import DisplayPost from '../Posts/displayPost';
+import Navbar from '../Navbar/navbar';
 
 
 
@@ -35,7 +36,8 @@ class Wall extends Component {
 		return(
 			<div className="container">
 			  <div className="row">
-			    <div className="col-8">
+			    <div className="col-lg-12">
+			    	<Navbar className="col-lg-12"/>
 			    	<p>Este es el muro...YAAAAAAS </p>
 			    	<CreatePost userInfo = { userInfo } />
 			    	<DisplayPost infoUser = { userInfo } />

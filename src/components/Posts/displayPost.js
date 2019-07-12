@@ -40,13 +40,13 @@ class DisplayPost extends Component {
 			{this.state.posts.map((post, i) =>
 
 				<div class="card" key={i}>
-				  <div class="card-header">
+				  <div class="card-header col-md-12 col-sm-12">
 				    <span>{post.creator}</span>
 				  </div>
 				  <div class="card-body">
 				    <h5 class="card-title">{post.name}</h5>
 				    <p class="card-text">Es de raza {post.description}, se perdió por {post.date} {post.details}. Sus señas particulares son: {post.signs}, si la ves, ponte en contacto con: {post.contact} </p>
-				    <small className="card-text">{post.date}</small>
+				    <small className="card-text">{post.publishedDate}</small>
 				  </div>
 				</div>
 			)}
