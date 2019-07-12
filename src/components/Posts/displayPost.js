@@ -36,19 +36,20 @@ class DisplayPost extends Component {
 
 	render(){
 		return(
-			<div className="container col-lg-6">
+			<div className="container col-lg-12">
 			{this.state.posts.map((post, i) =>
-				<div className="container" key={i}>
-					<p>{post.name}</p>
-					<p>{post.date}</p>
-					<p>{post.description}</p>  {/* aqui se va a imprimir el formulario y tengo que llamar a TODOS los values del formulario: nombre, lugar, descripcion, etc*/}
-					<p>{post.details}</p>
-					<p>{post.signs}</p>
-					<p>{post.contact}</p>
 
+				<div class="card" key={i}>
+				  <div class="card-header">
+				    <span>{post.creator}</span>
+				  </div>
+				  <div class="card-body">
+				    <h5 class="card-title">{post.name}</h5>
+				    <p class="card-text">{post.description + post.details + post.signs + post.contact}</p>
+				    <small className="card-text">{post.date}</small>
+				  </div>
 				</div>
-			)
-		}
+			)}
 		</div>
 		)
 	}
