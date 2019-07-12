@@ -45,7 +45,7 @@ class DisplayPost extends Component {
 				  </div>
 				  <div class="card-body">
 				    <h5 class="card-title">{post.name}</h5>
-				    <p class="card-text">{post.description + post.details + post.signs + post.contact}</p>
+				    <p class="card-text">Es de raza {post.description}, se perdió por {post.date} {post.details}. Sus señas particulares son: {post.signs}, si la ves, ponte en contacto con: {post.contact} </p>
 				    <small className="card-text">{post.date}</small>
 				  </div>
 				</div>
