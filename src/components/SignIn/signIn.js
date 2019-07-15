@@ -49,7 +49,7 @@ class SignIn extends Component {
 				  <div className="form-group">
 				  	<h1 className="text-center">Inicia Sesión</h1>
 				    <label htmlFor="exampleInputEmail1">Correo electrónico</label>
-				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa email" />
+				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa email" autocomplete="off" />
 				  </div>
 				  <div className="form-group">
 				    <label htmlFor="exampleInputPassword1">Contraseña</label>

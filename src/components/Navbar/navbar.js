@@ -11,7 +11,7 @@ render() {
 return (
 
 		<nav className="navbar col-lg-12 bg-color">
-		  <a className="navbar-brand" href="#">
+		  <a className="navbar-brand" href="#welcome">
 		    <img src={Logo} width="40" height="40" className="d-inline-block align-top" alt="logo"/>
 		    Paws
 		  </a>
