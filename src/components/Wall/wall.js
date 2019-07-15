@@ -3,6 +3,7 @@ import CreatePost from '../Posts/createPost';
 import firebase from '../Firebase/firebaseConfig';
 import DisplayPost from '../Posts/displayPost';
 import Navbar from '../Navbar/navbar';
+import '../Styles/wall.css';
 
 
 
@@ -29,16 +30,14 @@ class Wall extends Component {
 	render(){
 
 		const userInfo = this.props.user
-		console.log(this.props)
-
-		// const { posts } = this.props;
+		
 
 		return(
-			<div className="container">
+			<div className="container justify-content-center">
 			  <div className="row">
 			    <div className="col-lg-12">
 			    	<Navbar className="col-lg-12"/>
-			    	<p>Este es el muro...YAAAAAAS </p>
+			    	<p className="text">Mascotas Extravíadas </p>
 			    	<CreatePost userInfo = { userInfo } />
 			    	<DisplayPost infoUser = { userInfo } />
 			    </div>

@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-import firebase from '../Firebase/firebaseConfig';
+import React, { Component } from "react";
+import firebase from "../Firebase/firebaseConfig";
+import Swal from "sweetalert2";
 
-
-class DisplayPost extends Component { 
-
-		constructor(){
+class DisplayPost extends Component {
+	constructor() {
 		super();
 
-		this.state={
+		this.state = {
 			posts: []
 		}
-
+		this.deletePost = this.deletePost.bind(this);
 	}
 
-	componentWillMount(){
-		function wallPosts(snapshot){
+	componentWillMount() {
+		function wallPosts(snapshot) {
 			let posts = []
 
 			snapshot.forEach(post => {
@@ -34,24 +33,77 @@ class DisplayPost extends Component {
 		})
 	}
 
-	render(){
-		return(
-			<div className="container col-lg-12">
-			{this.state.posts.map((post, i) =>
+	deletePost = (e) => {
+		e.preventDefault();
+		const idPost = e.target.id;
+		console.log(idPost)
+		const idUser = firebase.auth().currentUser.uid;
+		const dataBasePostsRef = firebase.database().ref();
+		const postsRef = dataBasePostsRef.child("wall/");
+		const userPostRef = postsRef.child("profiles/" + idUser);
+		Swal.fire({
+			type: "warning",
+			title: "¿Quieres eliminar tu publicación?",
+			showCancelButton: true,
+			confirmButtonColor: "#27A10C",
+			confirmButtonText: "Si, eliminarlo",
+			cancelButtonColor: "#d33",
+			timer: 2000
+		}).then(result => {
+			console.log("result", result.value);
+			if (result.value) {
+				Swal.fire({
+					type: "success",
+					title: "Listo",
+					text: "Tu formulario ha sido eliminado",
+					timer: 1500
+				}).then(result => {
+					if (result.dismiss === Swal.DismissReason.timer) {
+						console.log("El timer me cerro");
+					}
+				});
+				postsRef.child(idPost).remove();
+				userPostRef.child(idPost).remove();
+			}
+		});
+	};
 
-				<div class="card" key={i}>
-				  <div class="card-header col-md-12 col-sm-12">
-				    <span>{post.creator}</span>
-				  </div>
-				  <div class="card-body">
-				    <h5 class="card-title">{post.name}</h5>
-				    <p class="card-text">Es de raza {post.description}, se perdió por {post.date} {post.details}. Sus señas particulares son: {post.signs}, si la ves, ponte en contacto con: {post.contact} </p>
-				    <small className="card-text">{post.publishedDate}</small>
-				  </div>
-				</div>
-			)}
-		</div>
-		)
+	render() {
+		return (
+			<div className="container col-lg-12">
+				{this.state.posts.map((post, i) => (
+					<div className="card" key={i}>
+						<div className="card-header col-md-12 col-sm-12">
+							{console.log(post.idUser)}
+
+							<span>{post.creator}</span>
+						</div>
+						<div className="card-body">
+							<h5 className="card-title">{post.name}</h5>
+							<p className="card-text">
+								Es de raza {post.description}, se perdió por{" "}
+								{post.date} {post.details}. Sus señas
+								particulares son: {post.signs}, si la ves, ponte
+								en contacto con: {post.contact}{" "}
+							</p>
+							<small className="card-text">
+								{post.publishedDate}
+							</small>
+						</div>
+						<div className="container">
+							<button
+								type="button"
+								onClick={this.deletePost}
+								id={post.id}
+								className="btn"
+							>
+								Eliminar
+							</button>
+						</div>
+					</div>
+				))}
+			</div>
+		);
 	}
 }
 
