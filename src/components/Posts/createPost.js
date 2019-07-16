@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import firebase from "../Firebase/firebaseConfig";
 import Swal from "sweetalert2";
+import UploadPhoto from "./uploadPhoto";
 
 class CreatePost extends Component {
 	constructor(props) {
@@ -195,6 +196,7 @@ class CreatePost extends Component {
 											placeholder="Nombre y telefono con quien ponerse en contacto"
 											required
 										/>
+										<UploadPhoto />
 									</div>
 								</form>
 							</div>
