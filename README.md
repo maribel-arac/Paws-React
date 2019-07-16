@@ -1,4 +1,4 @@
-# # Paws
+# Paws
 
 Es terrible estar en la situación de que tu mascota salió corriendo despavorido de la casa porque tu hermanito dejó la puerta abierta o que sea muy tardado encontrar quien puede adoptar a  _Firulais._
 
@@ -95,4 +95,4 @@ El usuario puede visualizar una pantalla de inicio para conocer la temática de 
 
 ## Prototipo alta fidelidad
 
-En el siguiente enlace, se puede encontrar el diseño y el flujo de  _**Paws**_.  [Figma diseño](https://www.figma.com/file/bkR9sXI0Yz8MD3vj7xdkuXpu/pet-patrol?node-id=0%3A1) Paws
+En el siguiente enlace, se puede encontrar el diseño y el flujo de  _**Paws**_.  [Figma diseño](https://www.figma.com/file/bkR9sXI0Yz8MD3vj7xdkuXpu/pet-patrol?node-id=0%3A1)
