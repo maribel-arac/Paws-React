@@ -2,9 +2,10 @@
   "name": "paws-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/maribel-arac/paws-react",
+  "homepage": "https://maribel-arac.github.io/paws-react",
   "dependencies": {
     "firebase": "^6.2.4",
+    "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
