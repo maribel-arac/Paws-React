@@ -39,7 +39,6 @@ class UploadPhoto extends React.Component {
             <div clasName="container">
             <label>Cargando</label>
                 <p>{this.state.progress}</p>
-                <label>Imagen</label>
                 {this.state.image && <img src= { this.state.imageURL } />}
 
                 <FileUploader 
@@ -48,8 +47,6 @@ class UploadPhoto extends React.Component {
                 storageRef = { firebase.storage().ref('lostPets') }
                 onUploadStart = { this.handleUploadStart }
                 onUploadSuccess = { this.handleUploadSuccess }
-
-
                 />
 
 
