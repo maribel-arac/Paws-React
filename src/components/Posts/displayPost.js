@@ -9,7 +9,6 @@ class DisplayPost extends Component {
 		this.state = {
 			posts: []
 		}
-		this.deletePost = this.deletePost.bind(this);
 	}
 
 	componentWillMount() {
@@ -48,7 +47,7 @@ class DisplayPost extends Component {
 			confirmButtonColor: "#27A10C",
 			confirmButtonText: "Si, eliminarlo",
 			cancelButtonColor: "#d33",
-			timer: 2000
+			timer: 2500
 		}).then(result => {
 			console.log("result", result.value);
 			if (result.value) {

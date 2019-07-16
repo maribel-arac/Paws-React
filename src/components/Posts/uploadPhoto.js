@@ -1,29 +1,56 @@
 import React from 'react';
-import ImageUploader from 'react-images-upload';
+import FileUploader from 'react-firebase-file-uploader';
+import firebase from "../Firebase/firebaseConfig";
  
 class UploadPhoto extends React.Component {
- 
-    constructor(props) {
-        super(props);
-         this.state = { pictures: [] };
-         this.onDrop = this.onDrop.bind(this);
+    constructor(){
+        super();
+
+        this.state = {
+            image: " ",
+            imageURL: " ",
+            progress: 0
+        }
     }
- 
-    onDrop(picture) {
+
+    handleUploadStart = () => {
         this.setState({
-            pictures: this.state.pictures.concat(picture),
-        });
+          progress: 0  
+        })
     }
+
+    handleUploadSuccess = fileName => {
+        this.setState({
+            image: fileName,
+            progress: 100
+        })
+
+        firebase.storage().ref('lostPets').child(fileName)
+            .then(url => this.setState({
+                imageURL: url
+            }))
+    }
+ 
+    
  
     render() {
+        // console.log(this.state)
         return (
-            <ImageUploader
-                withIcon={true}
-                buttonText='Carga una foto de tu mascota'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-            />
+            <div clasName="container">
+            <label>Cargando</label>
+                <p>{this.state.progress}</p>
+                {this.state.image && <img src= { this.state.imageURL } />}
+
+                <FileUploader 
+                accept = "image/*"
+                name ='image'
+                storageRef = { firebase.storage().ref('lostPets') }
+                onUploadStart = { this.handleUploadStart }
+                onUploadSuccess = { this.handleUploadSuccess }
+                />
+
+
+            </div>
         );
     }
 }

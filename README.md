@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# # Paws
 
-## Available Scripts
+Es terrible estar en la situación de que tu mascota salió corriendo despavorido de la casa porque tu hermanito dejó la puerta abierta o que sea muy tardado encontrar quien puede adoptar a  _Firulais._
 
-In the project directory, you can run:
+## ¿Cómo surgió Paws?
 
-### `npm start`
+Al notar que cada vez, hay una gran cantidad de personas que cuentan con mascotas y al momento de que se les extravían o verse en la necesidad de darlas en adopción :( , nos dimos cuenta de que existen varios grupos de rescate y/o adopción de mascotas en Facebook que los usuarios utilizan para pedir ayuda por medio de una publicación y finalmente ver si alguien la encuentra y poder seguir siendo felices a su lado.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Resolviendo la problemática
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Por lo que se vió la necesidad de encuestar a 60 dueños de mascotas ([Resultados encuestas](https://docs.google.com/forms/d/1SJRiXrmyt43-qs4E3k32E9OCF9ME8akMhWEBjxdOPjQ/edit#responses)) donde los usuarios expresaron que en dichos grupos:
 
-### `npm test`
+-   _"La información se pierde ya que es demasiada."_
+-   _"No están actualizados por lo que no sabes si la mascota sigue perdida."_
+-   _"Algunas publicaciones no son de la temática."_
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lo cual estas y una gran variedad de respuestas ayudaron a idear así como crear  **Paws,**  una red social que se enfoca exclusivamente para publicar si tu mascota esta extraviada y/o necesites difundir alguna que se encuentra en adopción y así elegir quien será el mejor adoptante.
 
-### `npm run build`
+## Elementos básicos y funcionalidad
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_**Paws**_  cuenta con una página de bienvenida donde se puede iniciar sesión de dos maneras:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1.  Registrarse con un email válido.
+2.  Iniciar directamente la sesión.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Al registrarse, se le envía un correo al usuario -el cual utilizó previamente- para autentificar la cuenta para que después pueda entrar a la página y poder realizar la publicación que desee o simplemente navegar.
 
-### `npm run eject`
+Una vez iniciando sesión, la red social cuenta con un muro donde se visualizan 2 opciones en la barra de navegación de la página y así el usuario decide que necesita.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1.  **Home:**  _muro de bienvenida_
+2.  **Lost:**  _puedes publicar tu mascota perdida y/o conocer cuales son otras que se encuentran en la misma situación_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cabe mencionar que al hacer una publicación en cualquiera de las secciones de  **Lost**  o  **Adoption**, se puede filtrar para que lo vean tus  _amigos_  (sólo tus contactos lo verán) o  _público_  (cualquier usuario de Paws).
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+En el lado superior izquierdo, se encuentra un menú desplegable con las opciones de  _Mi perfil_  y  _Cerrar Sesión._
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Principales funcionalidades del producto
 
-## Learn More
+Esto es posible ya que si tu mascota se encuentra extraviada solo se debe de llenar un pequeño formulario que se debe llenar con lo siguiente:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   _Foto_
+-   _Nombre_
+-   _Visto por última vez_
+-   _Descripción_  (raza, talla)
+-   _Señas particulares_
+-   _Si traía collar o ropa_
+-   _Contacto_  (nombre & número).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Y todo esto fue gracias a que los usuarios mencionaron que esa información es la más relevante conocer. Así que todas las publicaciones tendrán el mismo formato ayudando a que todas cuenten con uniformidad.
 
-### Analyzing the Bundle Size
+## Tests de usabilidad
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+En una primera iteración, se les mostró a los usuarios como luciría  **Paws**, donde varios comentaron que los colores (naranja, azul marino, verde y mostaza) eran muy serios y por eso daba la impresión que era sobre "comida", por lo que se decidió cambiarlos y agregar una imagen de huellitas de fondo dando el toque cursi que los usuarios solicitaron.
 
-### Making a Progressive Web App
+También se modificó el muro de bienvenida ya que en un principio contaba con 5 botones (_mascotas extraviadas, mascotas en adopción, reencuentros_, por mencionar algunos) y visualmente no eran atractivos y/o resultaban confusos para los usuarios así que se resumieron los botones en 4 iconos siendo estos mas amigables e intuitivos.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# Historias de usuario
 
-### Advanced Configuration
+## Pantalla de inicio y crear cuenta
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+El usuario puede visualizar una pantalla de inicio para conocer la temática de la página, iniciar sesión y/o crear una cuenta.
 
-### Deployment
+### DOD
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+-   Header con nombre y título
+-   Botón de registro funcionando
+-   Botón de iniciar sesión funcionando
+-   Se autentifica el correo del usuario para después poder iniciar sesión
+-   La contraseña es privada
+-   Descripción de la página incluida
+-   Footer agregado
+-   Prototipo de alta fidelidad terminado
 
-### `npm run build` fails to minify
+## Muro, hacer publicaciones , editarlas y/o borrarlas
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### [](https://github.com/NathaliCo/GDL002-social-network#dod-1)DOD
+
+-   Aparece el muro después de iniciar sesión
+-   Se guarda el correo del usuario en la base de datos (Firebase)
+-   Los mensajes de error aparecen en español
+-   El usuario puede publicar un post
+-   El usuario puede publicar para amigos o público
+-   Se puede editar y eliminar un formulario
+-   Se le da like a las publicaciones de adopción
+-   Se puede cerrar sesión
+-   Se agregan imágenes
+-   Confirma si en realidad quieres borrar una publicación
+
+# Diseño de la interfaz
+
+## Prototipo de baja fidelidad
+
+
+## Prototipo alta fidelidad
+
+En el siguiente enlace, se puede encontrar el diseño y el flujo de  _**Paws**_.  [Figma diseño](https://www.figma.com/file/bkR9sXI0Yz8MD3vj7xdkuXpu/pet-patrol?node-id=0%3A1) Paws
