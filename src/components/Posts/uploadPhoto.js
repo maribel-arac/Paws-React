@@ -39,7 +39,7 @@ class UploadPhoto extends React.Component {
             <div clasName="container">
             <label>Cargando</label>
                 <p>{this.state.progress}</p>
-                {this.state.image && <img src= { this.state.imageURL } />}
+                {this.state.image && <img src= { this.state.imageURL } alt="lost-pet" />}
 
                 <FileUploader 
                 accept = "image/*"
