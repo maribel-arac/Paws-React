@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import "./components/Styles/App.css";
 import firebase from "./components/Firebase/firebaseConfig";
 import Welcome from "./components/Welcome/welcome";
@@ -49,7 +49,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <Route exact path="/" render={() => <Welcome />} />
           <Route
@@ -63,7 +63,7 @@ class App extends React.Component {
             render={() => (this.state.user ? <Wall /> : <Register />)}
           />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
