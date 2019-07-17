@@ -3,11 +3,12 @@ import firebase from "../Firebase/firebaseConfig";
 import Swal from "sweetalert2";
 
 class DisplayPost extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
-			posts: []
+			posts: [],
+			imageURL: " "
 		}
 	}
 
@@ -69,7 +70,7 @@ class DisplayPost extends Component {
 
 	render() {
 		return (
-			<div className="container col-lg-12">
+			<div className="container col-lg-12 text-center">
 				{this.state.posts.map((post, i) => (
 					<div className="card" key={i}>
 						<div className="card-header col-md-12 col-sm-12">
@@ -77,9 +78,12 @@ class DisplayPost extends Component {
 
 							<span>{post.creator}</span>
 						</div>
+						<img src={ post.photoUrl }  className="card-img-top img-fluid rounded" alt="lost pet"/>
+						{console.log(this.state.imageURL)}
 						<div className="card-body">
 							<h5 className="card-title">{post.name}</h5>
 							<p className="card-text">
+
 								Es de raza {post.description}, se perdió por{" "}
 								{post.date} {post.details}. Sus señas
 								particulares son: {post.signs}, si la ves, ponte

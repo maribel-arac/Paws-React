@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import firebase from "../Firebase/firebaseConfig";
 import Swal from "sweetalert2";
-import UploadPhoto from "./uploadPhoto";
+import FileUploader from 'react-firebase-file-uploader';
 
 class CreatePost extends Component {
 	constructor(props) {
@@ -14,7 +14,9 @@ class CreatePost extends Component {
 			description: "",
 			details: "",
 			signs: "",
-			contact: ""
+			contact: "",
+			image: "",
+			imageURL: ""
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.sendFormFirebase = this.sendFormFirebase.bind(this);
@@ -46,7 +48,8 @@ class CreatePost extends Component {
 			signs: this.state.signs,
 			contact: this.state.contact,
 			publishedDate: date,
-			id: postKey
+			id: postKey,
+			photoUrl: this.state.imageURL
 		};
 		let updates = {};
 		updates["/wall/" + postKey] = postForm;
@@ -79,6 +82,18 @@ class CreatePost extends Component {
 		});
 	}
 
+
+//función para subir foto
+    handleUploadSuccess = fileName => {
+        this.setState({
+            image: fileName
+        })
+
+        firebase.storage().ref('lostPets').child(fileName).getDownloadURL()
+            .then(url => this.setState({
+                imageURL: url
+            }))
+    }
 	render() {
 		return (
 			<div className="container col-lg-8 ">
@@ -196,7 +211,16 @@ class CreatePost extends Component {
 											placeholder="Nombre y telefono con quien ponerse en contacto"
 											required
 										/>
-										<UploadPhoto />
+										 <div clasName="container">
+							                {this.state.image && <img src= { this.state.imageURL } alt="" />}
+
+							                <FileUploader 
+							                accept = "image/*"
+							                name ='image'
+							                storageRef = { firebase.storage().ref('lostPets') }
+							                onUploadSuccess = { this.handleUploadSuccess }
+							                />
+							            </div>
 									</div>
 								</form>
 							</div>
