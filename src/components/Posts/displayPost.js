@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../Firebase/firebaseConfig";
 import Swal from "sweetalert2";
+import '../Styles/displayPost.css';
 
 class DisplayPost extends Component {
 	constructor(props) {
@@ -8,7 +9,8 @@ class DisplayPost extends Component {
 
 		this.state = {
 			posts: [],
-			imageURL: " "
+			imageURL: " ",
+			likeCounter: 0
 		}
 	}
 
@@ -31,6 +33,13 @@ class DisplayPost extends Component {
 				posts: arrayPost
 			})
 		})
+	}
+
+	likePost = () => {
+		this.setState({
+			count: this.state.likeCounter + 1
+		}
+		);
 	}
 
 	deletePost = (e) => {
@@ -78,7 +87,7 @@ class DisplayPost extends Component {
 
 							<span>{post.creator}</span>
 						</div>
-						<img src={ post.photoUrl }  className="card-img-top img-fluid rounded" alt="lost pet"/>
+						<img src={ post.photoUrl }  className="card-img-top img-fluid image" alt="lost pet"/>
 						{console.log(this.state.imageURL)}
 						<div className="card-body">
 							<h5 className="card-title">{post.name}</h5>
@@ -94,14 +103,21 @@ class DisplayPost extends Component {
 							</small>
 						</div>
 						<div className="container">
+							<button 
+								type="button" 
+								onClick = { this.likePost } 
+								className = "btn" >
+							 ❤️ Me gusta 
+							</button>
 							<button
 								type="button"
-								onClick={this.deletePost}
-								id={post.id}
+								onClick = { this.deletePost }
+								id = { post.id }
 								className="btn"
 							>
 								Eliminar
 							</button>
+							
 						</div>
 					</div>
 				))}

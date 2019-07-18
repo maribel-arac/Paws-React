@@ -6,6 +6,7 @@ import Welcome from "./components/Welcome/welcome";
 import Wall from "./components/Wall/wall";
 import SignIn from "./components/SignIn/signIn";
 import Register from "./components/Register/register";
+import Profile from "./components/Profile/profile";
 
 class App extends React.Component {
   constructor() {
@@ -62,6 +63,11 @@ class App extends React.Component {
             path="/register"
             render={() => (this.state.user ? <Wall /> : <Register />)}
           />
+          <Route
+            path="/profile"
+            render={() => <Profile user = { this.state.userDB } userObject = { this.state.user } />}
+          />
+
         </div>
       </HashRouter>
     );

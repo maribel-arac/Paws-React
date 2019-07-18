@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import HomeNavbar from '../Navbar/homeNavbar';
 import firebase from 'firebase';
 import Swal from "sweetalert2";
 import '../Styles/signIn.css';
@@ -39,26 +40,29 @@ class SignIn extends Component {
 	}
 
 
-
-
 	render() {
 		return(
+			<div className="container col-lg-12">
+			<HomeNavbar />
+				<div className="container col-lg-6">
 
-			<div className="container col-lg-6">
-				<form onSubmit={this.signIn} className="colors">
-				  <div className="form-group">
-				  	<h1 className="text-center">Inicia Sesión</h1>
-				    <label htmlFor="exampleInputEmail1">Correo electrónico</label>
-				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa email" autocomplete="off" />
-				  </div>
-				  <div className="form-group">
-				    <label htmlFor="exampleInputPassword1">Contraseña</label>
-				    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
-				  </div>
-				  <button type="submit" className="btn color" >Ingresar</button>
-				  <Link to='/register' className="brand-logo btn btnRegister">Crear Cuenta</Link>
+					<form onSubmit={this.signIn} className="colors">
+					  <div className="form-group">
+					  	<h1 className="text-center">Inicia Sesión</h1>
+					    <label htmlFor="exampleInputEmail1">Correo electrónico:</label>
+					    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@dominio.com" autocomplete="off" />
+					  </div>
+					  <div className="form-group">
+					    <label htmlFor="exampleInputPassword1">Contraseña:</label>
+					    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
+					  </div>
+					  
+					  <button type="submit" className="btn btnSignIn" >Ingresar</button>
+					  <Link to='/register' className="brand-logo btn btnRegister">Crear Cuenta</Link>
+					 
 
-				</form>
+					</form>
+				</div>
 			</div>
 		)
 	}

@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.color-btn{
+.btnColor{
 	background-color: #D6B534;
 	color: #fff;
+	font-size: 20px;
 }
 
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
+    color: #256BA6;
 }
 

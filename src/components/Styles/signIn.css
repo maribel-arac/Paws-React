@@ -1,14 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sniglet:400,800&display=swap');
+
 
 .color{
 	background-color: #D6B534;
 }
 
-h1 {
-	font-family: 'Londrina Solid', cursive;
-	color: #892F85;
-}
 
 .btnRegister{
-	background-color: #00E1C6;
+	background-color: #0B70C8;
+	color: white;
+	margin-left: 20px;
+	text-align: center;
+}
+
+.btnSignIn{
+	background-color: #D6B534;
+	margin-left: 150px;
+	color: white;
+}
+
+label {
+	color: #225399;
+
+}
+
+h1 {
+	font-family: 'Sniglet', cursive;
+	color: #D93030;
+	margin-top: 40px;
 }
