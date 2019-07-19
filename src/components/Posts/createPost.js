@@ -3,6 +3,7 @@ import moment from "moment";
 import firebase from "../Firebase/firebaseConfig";
 import Swal from "sweetalert2";
 import FileUploader from 'react-firebase-file-uploader';
+import "../Styles/createPost.css";
 
 class CreatePost extends Component {
 	constructor(props) {
@@ -96,10 +97,10 @@ class CreatePost extends Component {
     }
 	render() {
 		return (
-			<div className="container col-lg-8 ">
+			<div className="container alignBtn col-lg-12">
 				<button
 					type="button"
-					className="btn btn-warning text-white"
+					className="btn colorBtn justify-content-end text-white"
 					data-toggle="modal"
 					data-target="#exampleModal"
 					data-whatever="@getbootstrap"
@@ -108,7 +109,7 @@ class CreatePost extends Component {
 				</button>
 
 				<div
-					className="modal fade"
+					className="modal fade col-lg-12"
 					id="exampleModal"
 					tabIndex="-1"
 					role="dialog"
@@ -117,11 +118,11 @@ class CreatePost extends Component {
 					<div className="modal-dialog" role="document">
 						<div className="modal-content">
 							<div className="modal-header">
-								<h5
+								<h4
 									className="modal-title"
 									id="exampleModalLabel">
 									Mascota perdida
-								</h5>
+								</h4>
 								<button
 									type="button"
 									className="close"
@@ -211,7 +212,7 @@ class CreatePost extends Component {
 											placeholder="Nombre y telefono con quien ponerse en contacto"
 											required
 										/>
-										 <div clasName="container">
+										 <div className="container">
 							                {this.state.image && <img src= { this.state.imageURL } alt="" />}
 
 							                <FileUploader 
