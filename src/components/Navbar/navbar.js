@@ -10,11 +10,11 @@ render() {
 
 return (
 
-		<nav className="navbar col-lg-12 bg-color">
-		  <a className="navbar-brand" href="#welcome">
-		    <img src={Logo} width="40" height="40" className="d-inline-block align-top" alt="logo"/>
-		    Paws
+		<nav className="navbar col-lg-12 bg-color sticky-top">
+		  <a className="navbar-brand" href="#signin">
+		    <img src={Logo} width="75" height="75" className="d-inline-block align-top" alt="logo"/>
 		  </a>
+		  <h1>Mascotas extravíadas</h1>
 		  <BtnSignOut className="btn justify-content-end" />
 		</nav>
 	)

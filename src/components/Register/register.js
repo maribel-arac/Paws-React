@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Styles/register.css';
 import firebase from '../Firebase/firebaseConfig';
+import HomeNavbar from '../Navbar/homeNavbar';
 import Swal from "sweetalert2";
 
 class Register extends Component {
@@ -35,7 +36,7 @@ class Register extends Component {
 		.then(function(){
 			const user = firebase.auth().currentUser;
 			user.updateProfile({
-				displayName:  name + lastName
+				displayName:  name + " " + lastName
 			})
 		})
 		.catch(function(error) {
@@ -53,28 +54,31 @@ class Register extends Component {
 
 	render() {
 		return(
+			<div className = "container col-lg-12">
+			<HomeNavbar />
 
-			<div className="container col-lg-6">
-				<form onSubmit={this.createUser} className="colors">
-				  <div className="form-group">
-				  	<h1 className="text-center">Crea tu cuenta</h1>
-				  	<div className="form-group">
-				    <label htmlFor="exampleInputName1">Nombre</label>
-				    <input type="text" onChange={this.handleChange} className="form-control" id="name"  placeholder="Ingresa nombre" />
-				  </div>
-				  <div className="form-group">
-				    <label htmlFor="exampleInputLastName1">Apellido</label>
-				    <input type="text" onChange={this.handleChange} className="form-control" id="lastName" placeholder="Ingresa un apellido" />
-				  </div>
-				    <label htmlFor="exampleInputEmail1">Correo electrónico</label>
-				    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa un email" />
-				  </div>
-				  <div className="form-group">
-				    <label htmlFor="exampleInputPassword1">Contraseña</label>
-				    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
-				  </div>
-				  <button type="submit" className="btn btn-color col text-center btn-default">Crear cuenta</button>
-				</form>
+				<div className="container col-lg-6">
+					<form onSubmit={this.createUser} className="colors">
+					  <div className="form-group">
+					  	<h1 className="text-center">Crea tu cuenta</h1>
+					  	<div className="form-group">
+					    <label htmlFor="exampleInputName1">Nombre:</label>
+					    <input type="text" onChange={this.handleChange} className="form-control" id="name"  placeholder="Ingresa nombre" />
+					  </div>
+					  <div className="form-group">
+					    <label htmlFor="exampleInputLastName1">Apellido:</label>
+					    <input type="text" onChange={this.handleChange} className="form-control" id="lastName" placeholder="Ingresa un apellido" />
+					  </div>
+					    <label htmlFor="exampleInputEmail1">Correo electrónico:</label>
+					    <input type="email" onChange={this.handleChange} className="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa un email" />
+					  </div>
+					  <div className="form-group">
+					    <label htmlFor="exampleInputPassword1">Contraseña:</label>
+					    <input type="password" onChange={this.handleChange} className="form-control" id="password" placeholder="Ingresa contraseña" />
+					  </div>
+					  <button type="submit" className="btn btn-color col text-center btn-default">Crear cuenta</button>
+					</form>
+				</div>
 			</div>
 		)
 	}

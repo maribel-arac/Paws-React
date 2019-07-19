@@ -1,8 +1,11 @@
-.text {
+@import url('https://fonts.googleapis.com/css?family=Sniglet:400,800&display=swap');
+
+
+.title {
 	text-align: center;
-	font-family: 'Londrina Solid', cursive;
-	color: #892F85;
-	font-size: 40px;
-	letter-spacing: 3pt;
+	font-family: 'Sniglet', cursive;
+	font-size: 35px;
+	color: blue;
+	letter-spacing: 1pt;
 	word-spacing:5pt;
 }

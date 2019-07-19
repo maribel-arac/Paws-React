@@ -81,17 +81,17 @@ class DisplayPost extends Component {
 		return (
 			<div className="container col-lg-12 text-center">
 				{this.state.posts.map((post, i) => (
-					<div className="card" key={i}>
+					<div className="card bg-transparent" key={i}>
 						<div className="card-header col-md-12 col-sm-12">
 							{console.log(post.idUser)}
 
-							<span>{post.creator}</span>
+							<span className="fontText">{post.creator}</span>
 						</div>
 						<img src={ post.photoUrl }  className="card-img-top img-fluid image" alt="lost pet"/>
 						{console.log(this.state.imageURL)}
 						<div className="card-body">
-							<h5 className="card-title">{post.name}</h5>
-							<p className="card-text">
+							<h2 className="card-title">{post.name}</h2>
+							<p className="card-text description-text">
 
 								Es de raza {post.description}, se perdió por{" "}
 								{post.date} {post.details}. Sus señas
@@ -106,15 +106,15 @@ class DisplayPost extends Component {
 							<button 
 								type="button" 
 								onClick = { this.likePost } 
-								className = "btn" >
-							 ❤️ Me gusta 
+								className = "btn sadBtn" >
+							 <span>😞 Me entristece </span>
 							</button>
 							<button
 								type="button"
 								onClick = { this.deletePost }
 								id = { post.id }
-								className="btn"
-							>
+								className="btn deleteBtn"
+							> <i className="fas fa-trash"></i> 
 								Eliminar
 							</button>
 							

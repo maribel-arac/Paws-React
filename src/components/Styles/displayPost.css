@@ -1,7 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Sniglet:400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
 .image {
 	height: 250px;
 	width: 200px;
 	margin-top: 30px;
   	margin-left: auto;
   	margin-right: auto;
+}
+
+.fontText {
+	font-size: 25px;
+	font-family: 'Rubik', sans-serif;
+	font-weight: bold;
+
+}
+
+.description-text {
+	color: black;
+}
+
+.sadBtn {
+	background-color: #3580EB;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.deleteBtn {
+	background-color: #D97659;
+	color: white;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	 font-family: 'Sniglet', cursive;
+	 color: #D93030;
 }
