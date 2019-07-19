@@ -100,7 +100,7 @@ class CreatePost extends Component {
 			<div className="container alignBtn col-lg-12">
 				<button
 					type="button"
-					className="btn colorBtn justify-content-end text-white"
+					className="btn colorBtn justify-content-end col-lg-4 text-white"
 					data-toggle="modal"
 					data-target="#exampleModal"
 					data-whatever="@getbootstrap"

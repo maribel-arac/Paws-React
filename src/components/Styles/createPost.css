@@ -2,6 +2,11 @@
 	background-color: #D6B534;
 	margin-bottom: 20px;
 	margin-top: 20px;
+	border: dotted;
+	border-radius: 20px;
+	font-size: 20px;
+	letter-spacing: 3pt;
+	word-spacing: 8pt;
 }
 
 .alignBtn {

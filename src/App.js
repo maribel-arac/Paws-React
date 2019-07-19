@@ -53,20 +53,10 @@ class App extends React.Component {
       <HashRouter basename="/">
         <div className="App">
           <Route exact path="/" render={() => <Welcome />} />
-          <Route
-            path="/signin"
-            render={() =>
-              this.state.user ? <Wall user={this.state.user} /> : <SignIn userBD = { this.state.userDB } />
-            }
+          <Route path="/signin" render={() => this.state.user ? <Wall user={this.state.user} /> : <SignIn userBD={this.state.userDB}/>}
           />
-          <Route
-            path="/register"
-            render={() => (this.state.user ? <Wall /> : <Register userDB = { this.state.userDB} />)}
-          />
-          <Route
-            path="/profile"
-            render={() => <Profile user = { this.state.userDB } userObject = { this.state.user } />}
-          />
+          <Route path="/register" render={() => this.state.user ? <Wall user={this.state.user} /> : <Register userDB={this.state.userDB}/>}/>
+          <Route path="/profile" render={() => <Profile user={this.state.userDB} userObject={this.state.user }/>} />
 
         </div>
       </HashRouter>
