@@ -14,7 +14,6 @@ class HomeNavbar extends Component {
      <nav className="navbar col-lg-12 bg-color">
       <a className="navbar-brand" href="#signin">
         <img src={Logo} width="75" height="75" className="d-inline-block align-top" alt="logo"/>
-     
       </a>
       <p className="font-color">PAWS</p>
     </nav>

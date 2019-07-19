@@ -11,12 +11,14 @@
 	color: white;
 	margin-left: 20px;
 	text-align: center;
+	font-size: 17px;
 }
 
 .btnSignIn{
-	background-color: #D6B534;
+	background-color: #049231;
 	margin-left: 150px;
 	color: white;
+	font-size: 17px;
 }
 
 label {
